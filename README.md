@@ -25,7 +25,7 @@ change this lint **apply plugin: 'com.android.library'** to **apply plugin: 'com
 * For library project, Move generated Android Studio Project in root folder
 
 ### Post work
-Your still need to configure your app info in application build.gradle:
+Your still need to configure your app info in application **build.gradle**:
 something like those:
 ```
     defaultConfig {
@@ -37,13 +37,13 @@ something like those:
     }
 ```
 and **signingConfigs** too.
-For more information: check <http://tools.android.com/tech-docs/new-build-system/user-guide>
-This guide helps me a lot when I am using gradle.
+For more information: check <http://tools.android.com/tech-docs/new-build-system/user-guide> this post.
+This guide helps me a lot when I am learning gradle.
 A lot more:
 * adding all your projects in **settings.gradle**
 * manage in your library dependency in libarary **build.gradle**
 * You will still need a little effort to make your project compile in most cases
-If your are a Chinese Reader, this article may help you<https://github.com/gengjiawen/gengjiawen.github.io/blob/master/_posts/2015-7-4-MigrateFromEclipseToAndroidStudio.md>.
+If your are a Chinese Reader, this article may help you <https://github.com/gengjiawen/gengjiawen.github.io/blob/master/_posts/2015-7-4-MigrateFromEclipseToAndroidStudio.md>.
 
 ## Notice
 * This script is written in Python3
