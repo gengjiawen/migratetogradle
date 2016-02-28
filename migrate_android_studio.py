@@ -39,8 +39,8 @@ def get_immdiate_dir(folder):
 def start_migrate(eclipse_project_path, output_path):
     """
     Call this method to migrate your eclipse project
-    :param eclipse_project_path: The Original
-    :param output_path:
+    :param eclipse_project_path: The Original eclipse path
+    :param output_path: The generate folder of your Anroid Studio Project
     :return:
     """
     print("eclipse path {}, output path: {}".format(eclipse_project_path, output_path))
