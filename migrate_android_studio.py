@@ -37,6 +37,12 @@ def get_immdiate_dir(folder):
     return file_list
 
 def start_migrate(eclipse_project_path, output_path):
+    """
+    Call this method to migrate your eclipse project
+    :param eclipse_project_path: The Original
+    :param output_path:
+    :return:
+    """
     print("eclipse path {}, output path: {}".format(eclipse_project_path, output_path))
     dir_prefix = "android_studio_templete/"
     dirs = [(dir_prefix + i) for i in ["libs", "src/main/java", "src/main/res", "src/main/assets"]]
