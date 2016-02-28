@@ -18,7 +18,7 @@ start_migrate(eclipse_project_path, output_path)
 * Create a hello world Project using Android Studio
 * Move generated file in app folder
 * modify build.gradle:
-change this lint **apply plugin: 'com.android.library'** to **apply plugin: 'com.android.application'**
+change this line **apply plugin: 'com.android.library'** to **apply plugin: 'com.android.application'**
 
 ### My eclipse project only has a main project and many library projects
 * For main project, manage it like above
@@ -27,7 +27,7 @@ change this lint **apply plugin: 'com.android.library'** to **apply plugin: 'com
 ### Post work
 Your still need to configure your app info in application **build.gradle**:
 something like those:
-```
+```groovy
     defaultConfig {
         applicationId "your package name"
         minSdkVersion 15
