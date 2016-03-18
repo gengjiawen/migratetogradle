@@ -3,7 +3,7 @@ Migrate Eclipse to Android Studio
 This is a project targeting convert eclipse project to android studio project with easy.
 
 ## What's it offering?
-Handle those file in traditional gradle file archetechure:
+Handle those file from eclipse project to traditional gradle-based android studio project:
 * Asset file
 * So file
 * Aidl file
@@ -32,13 +32,13 @@ change this line **apply plugin: 'com.android.library'** to **apply plugin: 'com
 Your still need to configure your app info in application **build.gradle**:
 something like those:
 ```groovy
-    defaultConfig {
-        applicationId "your package name"
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-    }
+defaultConfig {
+    applicationId "your package name"
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+}
 ```
 and **signingConfigs** too.
 For more information: check <http://tools.android.com/tech-docs/new-build-system/user-guide> this post.
