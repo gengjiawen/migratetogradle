@@ -1,6 +1,6 @@
 Migrate Eclipse to Android Studio
 ========
-this is a project targeting change eclipse project to android studio project
+This is a project targeting convert eclipse project to android studio project with easy.
 
 ## What's it offering?
 Handle those file in traditional gradle file archetechure:
@@ -8,6 +8,10 @@ Handle those file in traditional gradle file archetechure:
 * So file
 * Aidl file
 * Manifest file and progurad rules
+
+## Prerequisite
+* Basic Python knowledge
+* Basic Gradle knowledge
 
 ## How to use
 Just to call this method:
