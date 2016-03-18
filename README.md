@@ -39,10 +39,12 @@ something like those:
 and **signingConfigs** too.
 For more information: check <http://tools.android.com/tech-docs/new-build-system/user-guide> this post.
 This guide helps me a lot when I am learning gradle.
+
 A lot more:
 * adding all your projects in **settings.gradle**
 * manage in your library dependency in libarary **build.gradle**
 * You will still need a little effort to make your project compile in most cases
+
 If your are a Chinese Reader, this article may help you <https://github.com/gengjiawen/gengjiawen.github.io/blob/master/_posts/2015-7-4-MigrateFromEclipseToAndroidStudio.md>.
 
 ## Notice
