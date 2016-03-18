@@ -1,5 +1,3 @@
-/build
-
 ### Vim template
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -87,4 +85,5 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-
+# memory dumps
+captures/
