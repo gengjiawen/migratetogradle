@@ -29,7 +29,7 @@ change this line **apply plugin: 'com.android.library'** to **apply plugin: 'com
 * For library project, Move generated Android Studio Project in root folder
 
 ### Post work
-Your still need to configure your app info in application **build.gradle**:
+Your still need to configure your app info (minSdkVersion something like this) in your main module **build.gradle**:
 something like those:
 ```groovy
 defaultConfig {
