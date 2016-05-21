@@ -1,12 +1,3 @@
-### Vim template
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-
-
 ### Android template
 # Built application files
 *.apk
@@ -87,3 +78,13 @@ crashlytics-build.properties
 
 # memory dumps
 captures/
+
+### Vim template
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+
