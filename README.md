@@ -18,6 +18,8 @@ Just to call this method:
 ```Python
 start_migrate(eclipse_project_path, output_path)
 ```
+The **output_path** will be created if not exist.
+
 ### My eclipse project only has a main project
 * Create a hello world Project using Android Studio
 * Move generated file in app folder
