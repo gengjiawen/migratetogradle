@@ -13,6 +13,7 @@ Handle those file from eclipse project to traditional gradle-based android studi
 ### Tool
 * Python installed <https://www.python.org/downloads/>
 * Python IDE (optional)
+
 ### Knowledge
 * Basic Python knowledge
 * Basic Gradle knowledge
