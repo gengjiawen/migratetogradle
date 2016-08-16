@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Migrate Eclipse to gradle for Android Project by gengjiawen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Migrate Eclipse to gradle for Android Project</h1>
+      <h2 class="project-tagline">Convert your Eclipse project to Android Studio easily</h2>
+      <a href="https://github.com/gengjiawen/migratetogradle" class="btn">View on GitHub</a>
+      <a href="https://github.com/gengjiawen/migratetogradle/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/gengjiawen/migratetogradle/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="migrate-eclipse-to-android-studio" class="anchor" href="#migrate-eclipse-to-android-studio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Migrate Eclipse to Android Studio</h1>
+
+<p>This is a project targeting convert eclipse project to android studio project with easy.</p>
+
+<h2>
+<a id="whats-it-offering" class="anchor" href="#whats-it-offering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What's it offering?</h2>
+
+<p>Handle those file from eclipse project to traditional gradle-based android studio project:</p>
+
+<ul>
+<li>Asset file</li>
+<li>So file</li>
+<li>Aidl file</li>
+<li>Manifest file and progurad rules</li>
+</ul>
+
+<h2>
+<a id="prerequisite" class="anchor" href="#prerequisite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisite</h2>
+
+<h3>
+<a id="tool" class="anchor" href="#tool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tool</h3>
+
+<ul>
+<li>Python installed <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
+</li>
+<li>Python IDE (optional)</li>
+</ul>
+
+<h3>
+<a id="knowledge" class="anchor" href="#knowledge" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Knowledge</h3>
+
+<ul>
+<li>Basic Python knowledge</li>
+<li>Basic Gradle knowledge</li>
+</ul>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>Just to call this method:</p>
+
+<div class="highlight highlight-source-python"><pre>start_migrate(eclipse_project_path, output_path)</pre></div>
+
+<p>The <strong>output_path</strong> will be created if not exist.</p>
+
+<h3>
+<a id="my-eclipse-project-only-has-a-main-project" class="anchor" href="#my-eclipse-project-only-has-a-main-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My eclipse project only has a main project</h3>
+
+<ul>
+<li>Create a hello world Project using Android Studio</li>
+<li>Move generated file in app folder</li>
+<li>modify build.gradle:
+change this line <strong>apply plugin: 'com.android.library'</strong> to <strong>apply plugin: 'com.android.application'</strong>
+</li>
+</ul>
+
+<h3>
+<a id="my-eclipse-project-only-has-a-main-project-and-many-library-projects" class="anchor" href="#my-eclipse-project-only-has-a-main-project-and-many-library-projects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My eclipse project only has a main project and many library projects</h3>
+
+<ul>
+<li>For main project, manage it like above</li>
+<li>For library project, Move generated Android Studio Project in root folder</li>
+</ul>
+
+<h3>
+<a id="post-work" class="anchor" href="#post-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Post work</h3>
+
+<p>Your still need to configure your app info (minSdkVersion something like this) in your main module <strong>build.gradle</strong>:
+something like those:</p>
+
+<div class="highlight highlight-source-groovy"><pre>defaultConfig {
+    applicationId <span class="pl-s"><span class="pl-pds">"</span>your package name<span class="pl-pds">"</span></span>
+    minSdkVersion <span class="pl-c1">15</span>
+    targetSdkVersion <span class="pl-c1">23</span>
+    versionCode <span class="pl-c1">1</span>
+    versionName <span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<p>and <strong>signingConfigs</strong> too.
+For more information: check <a href="http://tools.android.com/tech-docs/new-build-system/user-guide">http://tools.android.com/tech-docs/new-build-system/user-guide</a> this post.
+This guide helps me a lot when I am learning gradle.</p>
+
+<p>A lot more:</p>
+
+<ul>
+<li>adding all your projects in <strong>settings.gradle</strong>
+</li>
+<li>manage in your library dependency in libarary <strong>build.gradle</strong>
+</li>
+<li>You will still need a little effort to make your project compile in most cases</li>
+</ul>
+
+<p>If your are a Chinese Reader, this article may help you <a href="https://github.com/gengjiawen/gengjiawen.github.io/blob/master/_posts/2015-7-4-MigrateFromEclipseToAndroidStudio.md">https://github.com/gengjiawen/gengjiawen.github.io/blob/master/_posts/2015-7-4-MigrateFromEclipseToAndroidStudio.md</a>.</p>
+
+<h2>
+<a id="notice" class="anchor" href="#notice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notice</h2>
+
+<ul>
+<li>This script is written in Python3</li>
+<li>Tested in Python 3.4 &amp; 3.5</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>Copyright 2016 Daniel Geng
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/gengjiawen/migratetogradle">Migrate Eclipse to gradle for Android Project</a> is maintained by <a href="https://github.com/gengjiawen">gengjiawen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
