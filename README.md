@@ -1,4 +1,4 @@
-Migrate Eclipse to Android Studio
+Migrate Eclipse project to Gradle-Based project for Android Studio
 ========
 This is a project targeting convert eclipse project to android studio project with easy.
 
