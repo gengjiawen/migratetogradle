@@ -45,7 +45,7 @@ def start_migrate(eclipse_project_path, output_path):
     :return:
     """
     print("eclipse path {}, output path: {}".format(eclipse_project_path, output_path))
-    dir_prefix = "android_studio_templete/"
+    dir_prefix = "android_studio_template/"
     dirs = [(dir_prefix + i) for i in ["libs", "src/main/java", "src/main/res", "src/main/assets"]]
     for i in dirs:
         os.makedirs(i, exist_ok=True)
