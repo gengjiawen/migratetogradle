@@ -2,20 +2,8 @@ import fnmatch
 import os
 import shutil
 
+import file_util
 
-def copytree(src, dst, symlinks=False, ignore=None):
-    for item in os.listdir(src):
-        s = os.path.join(src, item)
-        d = os.path.join(dst, item)
-        if os.path.isdir(s):
-            shutil.copytree(s, d, symlinks, ignore)
-        else:
-            shutil.copy2(s, d)
-
-
-def get_immdiate_dir(folder):
-    file_list = [os.path.join(folder, i) for i in next(os.walk(folder))[1]]
-    return file_list
 
 def start_migrate(eclipse_project_path, output_path):
     """
@@ -35,8 +23,8 @@ def start_migrate(eclipse_project_path, output_path):
     shutil.copytree(dir_prefix, output_path)
 
     print("handling libs...")
-    copytree(eclipse_project_path + "/libs", output_path + "/libs")
-    soLibs =  get_immdiate_dir(output_path + "/libs")
+    file_util.copytree(eclipse_project_path + "/libs", output_path + "/libs")
+    soLibs = file_util.get_immediate_dir(output_path + "/libs")
     if soLibs:
         print("handling so...")
         studio_so_path = os.path.join(output_path, r"src/main/jniLibs")
@@ -46,15 +34,15 @@ def start_migrate(eclipse_project_path, output_path):
             shutil.move(i, studio_so_path)
 
     print("handling res...")
-    copytree(os.path.join(eclipse_project_path, "res"), os.path.join(output_path, r"src/main/res"))
+    file_util.copytree(os.path.join(eclipse_project_path, "res"), os.path.join(output_path, r"src/main/res"))
     print("handling sourcecode...")
-    copytree(os.path.join(eclipse_project_path, "src"), os.path.join(output_path, r"src/main/java"))
+    file_util.copytree(os.path.join(eclipse_project_path, "src"), os.path.join(output_path, r"src/main/java"))
     print("handling assets...")
     eclipse_asset_dir = os.path.join(eclipse_project_path, "assets")
     if os.path.exists(eclipse_asset_dir) and os.listdir(eclipse_asset_dir) != []:
         asset_dir = os.path.join(output_path, r"src/main/assets")
         print(eclipse_project_path, asset_dir)
-        copytree(eclipse_project_path + "/assets", asset_dir)
+        file_util.copytree(eclipse_project_path + "/assets", asset_dir)
     else:
         print("no assets folder were found or it is empty")
     print("handling aidl...")
